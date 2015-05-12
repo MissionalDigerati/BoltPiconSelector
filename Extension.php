@@ -79,9 +79,16 @@ class Extension extends BaseExtension
     public function initialize()
     {
         if ($this->app['config']->getWhichEnd() == 'backend') {
-            $this->addJquery();
-            $this->addCss('assets/bolt_picon_selector.css', true);
-            $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
+            $piconCss = $this->app['config']['picon']['css_directory'];
+            if ($piconCss == '') {
+                echo 'I need settings';
+                return false;
+            } else {
+                $this->addJquery();
+                $this->addCss($piconCss, true);
+                $this->addCss('assets/bolt_picon_selector.css', true);
+                $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
+            }
         }
     }
 

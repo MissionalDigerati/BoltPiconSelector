@@ -1,4 +1,3 @@
 # If you do no add the settings, the field will not show!
 picon:
-    css_directory: 
-    font_directory: 
+    css_directory:  
