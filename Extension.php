@@ -23,9 +23,6 @@
 
 namespace Bolt\Extension\MissionalDigerati\BoltPiconSelector;
 
-use Bolt\Application;
-use Bolt\BaseExtension;
-
 /**
  * Bolt Picon Selector is an Extension for the Bolt CMS (@link http://bolt.cm)
  *
