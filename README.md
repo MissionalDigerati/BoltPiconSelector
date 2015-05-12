@@ -1,7 +1,7 @@
 Bolt Picon Selector
 ===================
 
-"Bolt Picon Selector" is an extension for the [Bolt CMS](http://bolt.cm) that creates a custom field for selecting a [Picons](https://picons.me).
+"Bolt Picon Selector" is an extension for the [Bolt CMS](http://bolt.cm) that creates a custom field for selecting a [Picons](https://picons.me).  Please note, you need to purchase the picons from [Picons](https://picons.me) before using this plugin.
 
 Development Notes
 -----------------
