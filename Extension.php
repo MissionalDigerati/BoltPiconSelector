@@ -23,6 +23,9 @@
 
 namespace Bolt\Extension\MissionalDigerati\BoltPiconSelector;
 
+use Bolt\Application;
+use Bolt\BaseExtension;
+
 /**
  * Bolt Picon Selector is an Extension for the Bolt CMS (@link http://bolt.cm)
  *
@@ -31,6 +34,23 @@ namespace Bolt\Extension\MissionalDigerati\BoltPiconSelector;
  **/
 class Extension extends \Bolt\BaseExtension
 {
+
+    /**
+     * Construct the class
+     *
+     * @param Application $app The application being loaded
+     * @return void
+     * @author 
+     **/
+    public function __construct(Application $app)
+    {
+        parent::construct($app);
+        $this->app['config']->getFields->addField(new PiconSelectorField());
+        if ($this->app['config']->getWhichEnd() == 'backend') {
+            $this->app['htmlsnippets'] = true;
+            $this->app['twig.loader.filesystem']->prependPath(__DIR__ . '/views');
+        }
+    }
 
     /**
      * Get the name of the extension/
@@ -50,7 +70,11 @@ class Extension extends \Bolt\BaseExtension
      * @access public
      * @author Johnathan Pulos
      **/
-    public function initialize() {
+    public function initialize()
+    {
+        $this->addCss('assets/picons.css', true);
+        $this->addCss('assets/bolt_picon_selector.css', true);
+        $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
     }
 
 }
