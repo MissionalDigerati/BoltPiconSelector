@@ -14,9 +14,14 @@
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
         <input type="hidden" data-picon-value {{ macro.attr(attr_opt) }}>
-        {% for key, value in field.values %}
-            {% set isSelected =  (key == context.content.get(key|capitalize)) %}
-            {{value}}
-        {% endfor %}
+        <div id="picon-selector-items">
+          {% for key, value in field.values %}
+              {% set isSelected =  (key == context.content.get(key|capitalize)) %}
+              <div class="picon-select-item{% if isSelected %} selected{% endif %}">
+                <i class="{{field.prepend_class}}{{value}}"></i>
+              </div>
+          {% endfor %}
+          <div class="clear"></div>
+        </div>
     </div>
 </fieldset>
