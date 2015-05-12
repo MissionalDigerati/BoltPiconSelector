@@ -79,7 +79,8 @@ class Extension extends BaseExtension
     public function initialize()
     {
         if ($this->app['config']->getWhichEnd() == 'backend') {
-            $piconCss = $this->app['config']['picon']['css_directory'];
+            $config = $this->getConfig();
+            $piconCss = $config['picon']['css_directory'];
             if ($piconCss == '') {
                 echo 'I need settings';
                 return false;
