@@ -1,1 +1,22 @@
-{{ dump(field) }}
+{#=== Options ============================================================================#}
+
+{% set attr_opt = {
+    class:        field.class|default(''),
+    name_id:      key,
+    required:     field.required|default(false),
+    readonly:     field.readonly|default(false)
+}%}
+
+{#=== FIELDSET ============================================================================#}
+<fieldset class="picon-selector">
+    <div class="col-sm-12">
+        <div>
+            <label class="control-label">{{field.label|default(key)}}</label>
+        </div>
+        <input type="hidden" data-picon-value {{ macro.attr(attr_opt) }}>
+        {% for key, value in field.values %}
+            {% set isSelected =  (key == context.content.get(key|capitalize)) %}
+            {{value}}
+        {% endfor %}
+    </div>
+</fieldset>
