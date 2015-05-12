@@ -79,17 +79,15 @@ class Extension extends BaseExtension
     public function initialize()
     {
         if ($this->app['config']->getWhichEnd() == 'backend') {
-            $config = $this->getConfig();
-            $piconCss = $config['picon']['css_directory'];
+            $this->addJquery();
+            $piconCss = $this->config['picon']['css_directory'];
             if ($piconCss == '') {
-                echo 'I need settings';
-                return false;
+                throw new \Exception("Bolt Picon Selector Exception: You are missing the picon css directory in the config file.");
             } else {
-                $this->addJquery();
                 $this->addCss($piconCss, true);
-                $this->addCss('assets/bolt_picon_selector.css', true);
-                $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
             }
+            $this->addCss('assets/bolt_picon_selector.css', true);
+            $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
         }
     }
 
