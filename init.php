@@ -20,7 +20,7 @@
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  * 
  */
-use Bolt\Extension\MissionalDigerati\BoltPiconSelector;
+namespace Bolt\Extension\MissionalDigerati\BoltPiconSelector;
 
 if (isset($app)) {
     $app['extensions']->register(new Extension($app));
