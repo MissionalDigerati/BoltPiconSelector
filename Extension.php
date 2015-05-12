@@ -80,7 +80,6 @@ class Extension extends BaseExtension
     {
         if ($this->app['config']->getWhichEnd() == 'backend') {
             $this->addJquery();
-            $this->addCss('assets/picons.css', true);
             $this->addCss('assets/bolt_picon_selector.css', true);
             $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
         }
