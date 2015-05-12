@@ -84,7 +84,7 @@ class Extension extends BaseExtension
             if ($piconCss == '') {
                 throw new \Exception("You are missing the picon css directory in the config file.");
             } else {
-                $this->addSnippet('aftercss', '<link rel="stylesheet" type="text/css" href="' . $piconCss . '">');
+                $this->addSnippet('endofhead', '<link rel="stylesheet" type="text/css" href="' . $piconCss . '">');
             }
             $this->addCss('assets/bolt_picon_selector.css', true);
             $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
