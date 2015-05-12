@@ -27,6 +27,12 @@ use Bolt\Application;
 use Bolt\BaseExtension;
 
 /**
+ * Since this is not in the marketplace, we need to add the include_once.  So not PSR-4 friendly.  As per issue at
+ * https://github.com/bolt/bolt/issues/1986
+ **/
+include_once 'PiconSelectorField.php';
+
+/**
  * Bolt Picon Selector is an Extension for the Bolt CMS (@link http://bolt.cm)
  *
  * @package default
