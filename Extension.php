@@ -45,7 +45,7 @@ class Extension extends BaseExtension
     public function __construct(Application $app)
     {
         parent::__construct($app);
-        $this->app['config']->getFields()->addField(new PiconSelectorField());
+        $this->app['config']->fields->addField(new PiconSelectorField());
         if ($this->app['config']->getWhichEnd() == 'backend') {
             $this->app['htmlsnippets'] = true;
             $this->app['twig.loader.filesystem']->prependPath(__DIR__ . '/views');
@@ -72,9 +72,11 @@ class Extension extends BaseExtension
      **/
     public function initialize()
     {
-        $this->addCss('assets/picons.css', true);
-        $this->addCss('assets/bolt_picon_selector.css', true);
-        $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
+        if ($this->app['config']->getWhichEnd() == 'backend') {
+            $this->addCss('assets/picons.css', true);
+            $this->addCss('assets/bolt_picon_selector.css', true);
+            $this->addJavascript('assets/jquery.bolt_picon_selector.js', true);
+        }
     }
 
 }

@@ -22,6 +22,4 @@
  */
 namespace Bolt\Extension\MissionalDigerati\BoltPiconSelector;
 
-if (isset($app)) {
-    $app['extensions']->register(new Extension($app));
-}
+$app['extensions']->register(new Extension($app));
