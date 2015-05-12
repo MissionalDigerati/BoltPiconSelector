@@ -1,0 +1,16 @@
+div#picon-selector-items .picon-select-item {
+    display: inline-block;
+    padding: 3px;
+    margin: 2px;
+}
+div#picon-selector-items .picon-select-item:hover {
+    border: 1px solid #333;
+    margin: 1px;
+}
+div#picon-selector-items .picon-select-item.selected {
+    border: 1px solid #006dcc;
+    margin: 1px;
+}
+div#picon-selector-items .picon-select-item i {
+    font-size: 25px;
+}
