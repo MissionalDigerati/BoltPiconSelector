@@ -13,11 +13,11 @@
         <div>
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
-        <input type="hidden" data-picon-value {{ macro.attr(attr_opt) }}>
+        <input type="hidden" id="picon-selected-item-field" {{ macro.attr(attr_opt) }}>
         <div id="picon-selector-items">
           {% for key, value in field.values %}
               {% set isSelected =  (key == context.content.get(key|capitalize)) %}
-              <div class="picon-select-item{% if isSelected %} selected{% endif %}">
+              <div class="picon-select-item{% if isSelected %} selected{% endif %}" data-picon="{{value}}">
                 <i class="{{field.prepend_class}}{{value}}"></i>
               </div>
           {% endfor %}
