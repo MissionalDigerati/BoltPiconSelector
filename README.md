@@ -28,8 +28,11 @@ tagline_icon:
 ```
 
 **type** - Should be set to "picon_selector".
+
 **label** - The label to display about the field.
+
 **prepend_class** - The name of the class that all picons start with.  (You will need to add this to the value in your templates.  We only store the value)
+
 **values** - An array of icons available with the prepend_cllass removed.
 
 
