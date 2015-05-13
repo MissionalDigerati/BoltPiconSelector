@@ -1,0 +1,28 @@
+{#=== Options ============================================================================#}
+
+{% set attr_opt = {
+    class:        field.class|default(''),
+    name_id:      key,
+    required:     field.required|default(false),
+    readonly:     field.readonly|default(false)
+}%}
+
+{#=== FIELDSET ============================================================================#}
+<fieldset class="picon-selector">
+    <div class="col-sm-12">
+        <div>
+            <label class="control-label">{{field.label|default(key)}}</label>
+        </div>
+        <div id="picon-selector-items">
+          {% set currentValue =  context.content.get(key)|default(field.values|first) %}
+          {% for key, value in field.values %}
+            {% set isSelected =  (value == currentValue) %}
+            <div class="picon-select-item{% if isSelected %} selected{% endif %}" data-picon="{{value}}">
+              <i class="{{field.prepend_class}}{{value}}"></i>
+            </div>
+          {% endfor %}
+          <input type="hidden" id="picon-selected-item-field" value="{{currentValue}}" {{ macro.attr(attr_opt) }}>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+</fieldset>
