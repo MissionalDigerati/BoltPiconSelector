@@ -14,19 +14,15 @@
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
         <div id="picon-selector-items">
-          {{dump(context.content.values)}}
-          {% set currentValue = field.values|first %}
+          {% set currentValue =  context.content.get(key)|default(field.values|first) %}
           {% for key, value in field.values %}
-            {% set isSelected =  (key == context.content.get(key|capitalize)) %}
-            {% if isSelected %}
-              {% set currentValue = value %}
-            {% endif %}
+            {% set isSelected =  (value == currentValue) %}
             <div class="picon-select-item{% if isSelected %} selected{% endif %}" data-picon="{{value}}">
               <i class="{{field.prepend_class}}{{value}}"></i>
             </div>
           {% endfor %}
+          <input type="hidden" id="picon-selected-item-field" value="{{currentValue}}" {{ macro.attr(attr_opt) }}>
           <div class="clearfix"></div>
         </div>
-        <input type="text" id="picon-selected-item-field" value="{{currentValue}}" {{ macro.attr(attr_opt) }}>
     </div>
 </fieldset>
