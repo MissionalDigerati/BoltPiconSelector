@@ -14,7 +14,7 @@
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
         <div id="picon-selector-items">
-          {% set currentValue =  context.content.get(key)|default(field.values|first) %}
+          {% set currentValue =  context.content.values[key]|default(field.values|first) %}
           {% for key, value in field.values %}
             {% set isSelected =  (value == currentValue) %}
             <div class="picon-select-item{% if isSelected %} selected{% endif %}" data-picon="{{value}}">
