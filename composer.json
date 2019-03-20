@@ -9,7 +9,10 @@
     "field"
   ],
   "require": {
-      "bolt/bolt": "^3.0"
+      "bolt/bolt": "^3.3"
+  },
+  "scripts": {
+    "lint": "phpcs --standard=PSR2 src/"
   },
   "license": "GPL-3.0+",
   "authors": [
@@ -22,14 +25,17 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "autoload": {
-    "files": [
-      "init.php"
-    ],
     "psr-4" : {
-      "Bolt\\Extension\\MissionalDigerati\\BoltPiconSelector\\" : ""
+      "Bolt\\Extension\\MissionalDigerati\\BoltPiconSelector\\" : "src"
     }
   },
   "extra": {
-      "bolt-assets": "assets"
+      "bolt-assets": "web",
+      "bolt-class": "Bolt\\Extension\\MissionalDigerati\\BoltPiconSelector\\BoltPiconSelectorExtension",
+      "bolt-icon": "bolt-icon.png",
+      "bolt-screenshots": []
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.4"
   }
 }
