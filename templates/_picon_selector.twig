@@ -14,7 +14,7 @@
             <label class="control-label">{{field.label|default(key)}}</label>
         </div>
         <div id="picon-selector-items">
-          {{dump(field.values)}}
+          {{dump(context.content.values)}}
           {% set currentValue =  context.content.values[key]|default(field.values|first) %}
           {% for key, value in field.values %}
             {% set isSelected =  (value == currentValue) %}
