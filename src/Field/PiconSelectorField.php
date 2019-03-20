@@ -22,9 +22,9 @@
  */
 namespace Bolt\Extension\MissionalDigerati\BoltPiconSelector\Field;
 
-use Bolt\Storage\Field\FieldInterface;
+use Bolt\Storage\Field\Type\FieldTypeBase;
 
-class PiconSelectorField implements FieldInterface
+class PiconSelectorField extends FieldTypeBase
 {
     /**
      * Get the name of the field
