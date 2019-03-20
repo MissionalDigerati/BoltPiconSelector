@@ -67,4 +67,14 @@ class BoltPiconSelectorExtension extends SimpleExtension
             JavaScript::create('jquery.bolt_picon_selector.js')->setZone(Zone::BACKEND),
         ];
     }
+
+    /**
+     * Get a list of twig paths
+     *
+     * @return array    Our projects Twig path
+     */
+    public function registerTwigPaths()
+    {
+        return ['templates'];
+    }
 }
