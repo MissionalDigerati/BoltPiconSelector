@@ -15,7 +15,7 @@
         </div>
         <div id="picon-selector-items">
           {{dump(context.content.values)}}
-          {% set currentValue = default(field.values|first) %}
+          {% set currentValue = field.values|first %}
           {% for key, value in field.values %}
             {% set isSelected =  (key == context.content.get(key|capitalize)) %}
             {% if isSelected %}
