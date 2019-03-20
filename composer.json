@@ -8,6 +8,9 @@
     "selector",
     "field"
   ],
+  "require": {
+      "bolt/bolt": "^3.0"
+  },
   "license": "GPL-3.0+",
   "authors": [
     {
@@ -16,6 +19,8 @@
       "homepage": "http://missionaldigerati.org"
     }
   ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "autoload": {
     "files": [
       "init.php"
@@ -23,5 +28,8 @@
     "psr-4" : {
       "Bolt\\Extension\\MissionalDigerati\\BoltPiconSelector\\" : ""
     }
+  },
+  "extra": {
+      "bolt-assets": "assets"
   }
 }
