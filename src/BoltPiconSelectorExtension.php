@@ -62,9 +62,9 @@ class BoltPiconSelectorExtension extends SimpleExtension
             throw new \Exception("You are missing the picon css directory in the config file.");
         }
         return [
-            new Stylesheet::create($config['picon']['css_directory'])->setZone(Zone::BACKEND),
-            new Stylesheet::create('bolt_picon_selector.css')->setZone(Zone::BACKEND),
-            new JavaScript::create('jquery.bolt_picon_selector.js')->setZone(Zone::BACKEND),
+            Stylesheet::create($config['picon']['css_directory'])->setZone(Zone::BACKEND),
+            Stylesheet::create('bolt_picon_selector.css')->setZone(Zone::BACKEND),
+            JavaScript::create('jquery.bolt_picon_selector.js')->setZone(Zone::BACKEND),
         ];
     }
 }
