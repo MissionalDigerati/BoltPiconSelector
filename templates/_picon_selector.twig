@@ -15,9 +15,12 @@
         </div>
         <div id="picon-selector-items">
           {{dump(context.content.values)}}
-          {% set currentValue =  context.content.values[key]|default(field.values|first) %}
+          {% set currentValue = default(field.values|first) %}
           {% for key, value in field.values %}
-            {% set isSelected =  (value == currentValue) %}
+            {% set isSelected =  (key == context.content.get(key|capitalize)) %}
+            {% if isSelected %}
+              {% set currentValue = value %}
+            {% endif %}
             <div class="picon-select-item{% if isSelected %} selected{% endif %}" data-picon="{{value}}">
               <i class="{{field.prepend_class}}{{value}}"></i>
             </div>
